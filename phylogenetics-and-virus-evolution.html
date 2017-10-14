@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Phylogenetics and virus evolution</title>
+
+		<meta name="author" content="Trevor Bedford">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal/css/reveal.min.css">
+		<link rel="stylesheet" href="reveal/css/theme/trvrb.css" id="theme">
+		<link rel="stylesheet" href="reveal/css/font-awesome/css/font-awesome.min.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+	</head>
+
+	<body>
+
+		<!-- <div style="position: absolute; top:10px; left:10px; z-index:100;">
+			<a href="http://bedford.io/projects/phylodynamics-lecture/">
+				<i class="fa fa-times-circle" style="color: #bbb;"></i>
+			</a>
+		</div> -->
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section data-background="#447ECC">
+					<h2 class="title">Phylogenetics and <br> virus evolution</h2>
+					<br>
+					<p class="title">
+					Trevor Bedford (@trvrb)
+					<br>
+					Oct 17, 2017
+					<br>
+					MCB532 Human Pathogenic Viruses
+				</section>
+
+				<section data-transition="none">
+					<h3>Phylogeny describes evolutionary relationships</h3>
+					<img class="stretch" src="images/parsimony_1.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>Phylogeny is usually a hypothesis based on characteristics of sampled taxa</h3>
+					<img class="stretch" src="images/parsimony_2.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>Phylogeny implies a series of mutational events leading to observed tip states</h3>
+					<img class="stretch" src="images/parsimony_3.png">
+				</section>
+
+				<section data-background="#4C91BF">
+					<h2 class="title">Phylogenetic inference</h2>
+				</section>
+
+				<section>
+					<img class="stretch" src="images/phylogenetic_inference.png">
+				</section>
+
+				<section>
+					<h3>"Data" is generally a sequence alignment</h3>
+					<img class="stretch" src="images/phylogenetic_inference_alignment.png">
+				</section>
+
+				<section>
+					<h3>Phylogeny structures site patterns</h3>
+					<img class="stretch" src="images/phylogenetic_inference_site_patterns.png">
+					<div class="citation">
+						<a href="http://vincebuffalo.org/dancinggenealogies2/">
+							Buffalo. 2015
+						</a>
+					</div>
+				</section>
+
+				<section style="text-align: left;">
+					<h3>Tree space is vast</h3>
+					<p>
+					There are (2<i>n</i>-3)!! rooted trees for <i>n</i> taxa
+					<ul>
+						<li>3 taxa: 3 trees</li>
+						<li>5 taxa: 105 trees</li>
+						<li>10 taxa: 34,459,425 trees</li>
+						<li>20 taxa: 8.2 &times; 10<sup>21</sup> trees</li>
+						<li>50 taxa: 2.8 &times; 10<sup>76</sup> trees</li>
+						<li>100 taxa: 3.3 &times; 10<sup>184</sup> trees</li>
+					</ul>
+					</p>
+				</section>
+
+				<section>
+					<h3>Solution space is rugged</h3>
+					<img class="stretch" src="images/phylogenetic_inference_solution_space.png">
+				</section>
+
+				<section style="text-align: left;">
+					<h3>Types of phylogenetic inference methods</h3>
+					<p>
+					<ul>
+						<li>Distance-based (neighbor-joining, fast, heuristic)</li>
+						<li>Parsimony (fast, "model-free")</li>
+						<li>Maximum likelihood (infers model of mutation, accurate, examples: FastTree, RAxML)</li>
+						<li>Bayesian (like ML, but requires prior, produces estimates of uncertainty, examples: MrBayes, BEAST)</li>
+					</ul>
+					</p>
+				</section>
+
+				<section>
+					<h3>Inference is a tree topology, branch lengths and ancestral states</h3>
+					<img class="stretch" src="images/ancestral_state_tree.png">
+					<div class="citation">
+						<a href="http://nextflu.org/">nextflu.org</a>
+					</div>
+				</section>
+
+				<section data-background="#56A0AE">
+					<h2 class="title">Molecular clocks and dated phylogenies</h2>
+				</section>
+
+				<section>
+					<h3>Mutations tend to accumulate in a clock-like fashion</h3>
+					<img class="stretch" src="images/clock_flu_tree.png">
+				</section>
+
+				<section>
+					<h3>"Root-to-tip" plots show temporal signal</h3>
+					<img class="stretch" src="images/clock_flu_root_to_tip.png">
+				</section>
+
+				<section>
+					<h3>Allows conversion between branch length and time</h3>
+					<video data-autoplay src="images/clock_conversion.mp4"></video>
+				</section>
+
+				<section data-background="#63AC9A">
+					<h2 class="title">Inference of discrete traits</h2>
+				</section>
+
+				<section>
+					<h3>"Data" is a phylogeny and tip states</h3>
+					<img class="stretch" src="images/phylogeo_inference_data.png">
+				</section>
+
+				<section>
+					<h3>Model infers transition matrix and ancestral states</h3>
+					<img class="stretch" src="images/phylogeo_inference_model.png">
+				</section>
+
+				<section>
+					<h3>Rare transitions, short branches and many taxa increase confidence</h3>
+					<img class="stretch" src="images/phylogeo_inference_rare_transitions.png">
+				</section>
+
+				<section data-background="#71B486">
+					<h2 class="title">Phylogeography</h2>
+				</section>
+
+				<section>
+					<h3>Nesting patterns are informative</h3>
+					<img class="stretch" src="images/phylogeo_inference_nesting.png">
+				</section>
+
+				<section>
+					<h3>Zika phylogeny infers an origin in northeast Brazil</h3>
+					<img class="stretch" src="images/phylogeo_zika_tree.png">
+					<div class="citation">
+						<a href="http://bedford.io/papers/faria-zika-in-brazil/">Faria et al. 2017. Nature.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Influenza phylogeny shows repeated spread from E-SE Asia</h3>
+					<img class="stretch" src="images/phylogeo_flu_tree.png">
+					<div class="citation">
+						<a href="http://bedford.io/papers/bedford-global-circulation/">
+							Bedford et al. 2015. Nature.
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Influenza transitions mirror air travel network</h3>
+					<img class="stretch" src="images/phylogeo_flu_map.png">
+					<div class="citation">
+						<a href="http://bedford.io/papers/bedford-global-circulation/">
+							Bedford et al. 2015. Nature.
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Ebola phylogeny shows frequent migration events</h3>
+					<img class="stretch" src="images/phylogeo_ebola_tree_map.png">
+					<div class="citation">
+						<a href="http://bedford.io/papers/dudas-ebola-epidemic-spread/">
+							Dudas et al. 2017. Nature.
+						</a>
+					</div>
+				</section>
+
+				<section data-background="#81BA72">
+					<h2 class="title">Reservoir species and host jumps</h2>
+				</section>
+
+				<section>
+					<h3>Influenza has a reservoir in wild birds, spillovers sometimes become endemic</h3>
+					<img class="stretch" src="images/spillover_influenza_tree.png">
+				</section>
+
+				<section>
+					<h3>Each Ebola outbreak derives from a separate spillover event</h3>
+					<img class="stretch" src="images/spillover_ebola_tree.png">
+					<div class="citation">
+						<a href="http://science.sciencemag.org/content/345/6202/1369">
+							Gire et al. 2014. Science.
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>MERS-CoV has frequent spillover events, but limited human-to-human transmission</h3>
+					<img class="stretch" src="images/spillover_mers_tree.png">
+					<div class="citation">
+						<a href="http://bedford.io/papers/dudas-mers-structure/">
+							Dudas et al. 2017. bioRxiv.
+						</a>
+					</div>
+				</section>
+
+				<section data-background="#94BD62">
+					<h2 class="title">Reassortment and recombination</h2>
+				</section>
+
+				<section>
+					<h3>Influenza B reassorts across segments</h3>
+					<img class="stretch" src="images/recombination_flu_b_trees.png">
+					<div class="citation">
+						<a href="http://bedford.io/papers/dudas-flub-reassortment/">Dudas et al. 2015. Mol Biol Evol.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Reassortment splits gene constellations</h3>
+					<img class="stretch" src="images/recombination_flu_b_railway.png">
+					<div class="citation">
+						<a href="http://bedford.io/papers/dudas-flub-reassortment/">Dudas et al. 2015. Mol Biol Evol.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Abundant recombination during within-host HIV evolution</h3>
+					<img class="stretch" src="images/recombination_hiv_trees.png">
+					<div class="citation">
+						<a href="https://elifesciences.org/articles/11282">Zanini et al. 2015. eLife.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Linkage disequilibrium decays with physical distance</h3>
+					<img class="stretch" src="images/recombination_hiv_ld.png">
+					<div class="citation">
+						<a href="https://elifesciences.org/articles/11282">Zanini et al. 2015. eLife.</a>
+					</div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+		<script src="reveal/js/reveal.min.js"></script>
+		<script src="reveal/js/config.js"></script>
+
+	</body>
+</html>
