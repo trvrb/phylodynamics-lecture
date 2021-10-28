@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Genomic epidemiology of SARS-CoV-2</title>
+
+		<meta name="author" content="Trevor Bedford">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal-v4/dist/reveal.css">
+		<link rel="stylesheet" href="reveal-v4/dist/theme/blotter.css" id="theme">
+		<link rel="stylesheet" href="reveal/css/font-awesome/css/font-awesome.min.css">
+
+	</head>
+
+	<body>
+
+		<!-- <div style="position: absolute; top:10px; left:10px; z-index:100;">
+			<a href="http://bedford.io/projects/phylodynamics-lecture/">
+				<i class="fa fa-times-circle" style="color: #bbb;"></i>
+			</a>
+		</div> -->
+
+		<div class="reveal">
+
+			<!--
+			Outline:
+			 - Pandemic emergence and human-to-human transmission / molecular clocks
+			 - Local transmission / phylogeography
+			 - Evolution of variants / adaptive evolution
+ 			-->
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section data-background="#447ECC">
+					<h2 class="title">Genomic epidemiology of SARS-CoV-2</h2>
+					<br>
+					<p class="title">
+					Trevor Bedford (@trvrb)
+					<br>
+					Oct 28, 2021
+					<br>
+					MCB532 Human Pathogenic Viruses
+				</section>
+
+				<section data-background="#000000">
+					<h2 class="title">Sequencing to reconstruct pathogen spread</h2>
+				</section>
+
+				<section data-transition="slide-in none-out">
+					<h3>Epidemic process</h3>
+					<img class="stretch" data-src="images/infection_tree_1.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>Sample some individuals</h3>
+					<img class="stretch" data-src="images/infection_tree_2.png">
+				</section>
+
+				<section data-transition="none">
+					<h3>Sequence and determine phylogeny</h3>
+					<img class="stretch" data-src="images/infection_tree_3b.png">
+				</section>
+
+				<section data-transition="none-in slide-out">
+					<h3>Sequence and determine phylogeny</h3>
+					<img class="stretch" data-src="images/infection_tree_4b.png">
+				</section>
+
+				<section data-background="#000000">
+					<h2 class="title">Genomic epidemiology during the COVID-19 pandemic</h2>
+				</section>
+
+				<section>
+					<h3>>4.6M SARS-CoV-2 genomes shared to GISAID with 630k genomes in Aug 2021 alone</h3>
+					<img class="stretch" data-src="images/ncov_genomic_surveillance_dotplot_global_2021_09_12.png">
+					<div class="citation">
+						Data from gisaid.org
+					</div>
+				</section>
+
+				<section style="text-align: left;">
+					<h3>Three key insights that genomic epi provided during pandemic and concepts that underlie these insights</h3>
+					<p>
+					<ol>
+						<li>Rapid human-to-human spread in Wuhan beyond initial market outbreak (molecular clocks)</li>
+						<li>Extensive local transmission while testing was rare (phylogeography)</li>
+						<li>Identification of variants of concern and mapping of increased transmission rates (adaptive evolution)</li>
+					</ol>
+					</p>
+				</section>
+
+				<section data-background="#000000">
+					<h2 class="title">Molecular clocks and early human-to-human spread</h2>
+				</section>
+
+				<section>
+					<h3>Mutations tend to accumulate in a clock-like fashion</h3>
+					<img class="stretch" data-src="images/clock_flu_tree.png">
+				</section>
+
+				<section>
+					<h3>"Root-to-tip" plots show temporal signal</h3>
+					<img class="stretch" data-src="images/clock_flu_root_to_tip.png">
+				</section>
+
+				<section>
+					<h3>Allows conversion between branch length and time</h3>
+					<img class="stretch" data-src="images/clock_flu_timetree.png">
+				</section>
+
+				<section>
+					<h3>Jan 11: First five genomes from Wuhan showed a novel SARS-like coronavirus</h3>
+					<img class="stretch" data-src="images/ncov_sars_like_tree.png">
+					<div class="citation">
+						<a href="https://nextstrain.org/groups/blab/beta-cov">nextstrain.org</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Jan 19: First 12 genomes from Wuhan and Bangkok showed lack of genetic diversity</h3>
+					<img class="stretch" data-src="images/ncov_tree_2020_01_19.png">
+					<div class="citation">
+						<a href="https://nextstrain.org/ncov">nextstrain.org</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>
+						Single introduction into the human population between Nov 15 and Dec 15 and
+						subsequent rapid human-to-human spread
+					</h3>
+					<img class="stretch" data-src="images/ncov_tmrca_r0_2020_01_23.png">
+					<div class="citation">
+						<a href="https://nextstrain.org/narratives/ncov/sit-rep/2020-01-23">Bedford et al. 2020. Technical Report.</a>
+					</div>
+				</section>
+
+				<section data-background="#000000">
+					<h2 class="title">Phylogeography and inferring local transmission</h2>
+				</section>
+
+				<section>
+					<h3>"Data" is a phylogeny and tip states</h3>
+					<p>States include nucleotides, amino acids, geo locations, hosts, etc...</p>
+					<img class="stretch" data-src="images/phylogeo_inference_data.png">
+				</section>
+
+				<section>
+					<h3>Model infers transition matrix and ancestral states</h3>
+					<img class="stretch" data-src="images/phylogeo_inference_model.png">
+				</section>
+
+				<section>
+					<h3>Rare transitions, short branches and many taxa increase confidence</h3>
+					<img class="stretch" data-src="images/phylogeo_inference_rare_transitions.png">
+				</section>
+
+				<section>
+					<h3>Rapid global epidemic spread from China</h3>
+					<video data-autoplay>
+						<source src="images/ncov_early_tree_map_animation.mp4" type="video/mp4"/>
+					</video>
+				</section>
+
+				<section>
+					<h3>Epidemic in the USA was introduced from China in late Jan and from Europe during Feb</h3>
+					<img class="stretch" data-src="images/ncov_tree_map_2020_04_20_usa_1.png">
+					<div class="citation">
+						<a href="https://nextstrain.org">nextstrain.org</a>
+					</div>
+				</section>
+
+				<section>
+					<div style="float: left; width: 44%">
+						<h3>Seattle Flu Study detects local circulation and charts early epidemic in Washington State</h3>
+					</div>
+					<div style="float: right; width: 56%">
+						<img data-src="images/ncov_cryptic_transmission_prevalence.png">
+					</div>
+					<div class="citation">
+						<a href="https://bedford.io/papers/bedford-ncov-cryptic-transmission/">Bedford et al. 2020. Science.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Direct introduction from China ~Feb 1 responsible for the majority of the epidemic</h3>
+					<img class="stretch" data-src="images/ncov_cryptic_transmission_outbreak_clade.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/bedford-ncov-cryptic-transmission/">Bedford et al. 2020. Science.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Mitigation efforts visible in virus genetic diversity</h3>
+					<img class="stretch" data-src="images/ncov_wa_phylodynamics_growth_rate.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/muller-ncov-wa-d614g/">Müller et al. 2021. Sci Transl Med.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Similar stories from elsewhere in the world, particularly when genomic sequencing is strong relative to case-based surveillance</h3>
+					<img class="stretch" data-src="images/ncov_tree_map_drc_2020_03_27.png">
+					<div class="citation">
+						<a href="https://nextstrain.org/narratives/ncov/sit-rep/2020-03-27?n=16">Bell et al. 2020. Technical Report.</a>
+					</div>
+				</section>
+
+				<section>
+					<h4 class="inset-top-right">
+						After initial wave, with mitigation <br> efforts and decreased travel, <br> regional clades emerge
+					</h4>
+					<img class="stretch" data-src="images/ncov_tree_2020_10_20_global_jun_oct.png">
+					<div class="citation">
+						<a href="https://nextstrain.org">nextstrain.org</a>
+					</div>
+				</section>
+
+				<section data-background="#000000">
+					<h2 class="title">Adaptive evolution and emergence and spread of variant of concern viruses</h2>
+				</section>
+
+				<section style="text-align: left;">
+					<h3>Mutations that increase viral fitness will increase in frequency</h3>
+					<p>
+					<ol>
+						<li>This distorts coalescent branching patterns</li>
+						<li>This increases observed rate of mutations at selected sites</li>
+					</ol>
+					</p>
+				</section>
+
+				<section>
+					<h3>Neutral population dynamics</h3>
+					<img class="stretch" data-src="images/tree_neutrality.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/bedford-tree-topology/">Bedford et al. 2011. BMC Evol Biol.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Episodic positive selection shows selective sweeps</h3>
+					<img class="stretch" data-src="images/tree_episodic_selection.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/bedford-tree-topology/">Bedford et al. 2011. BMC Evol Biol.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Spread of VOC / VOI lineages across the world</h3>
+					<img class="stretch" data-src="images/ncov_variants_animation_2021_09_12.gif">
+					<div class="citation">
+						<a href="https://nextstrain.org/ncov/gisaid/global?animate=2019-12-19,2021-09-11,1,0,30000&branchLabel=none&d=tree,map&p=grid">nextstrain.org</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Delta is outcompeting other variants and is on track to sweep</h3>
+					<img class="stretch" data-src="images/ncov_variants_emerging_lineages_2021_09_12.png">
+					<div class="citation">
+						<a href="https://nextstrain.org/ncov/gisaid/global?c=emerging_lineage">nextstrain.org</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Phylogeny of 10k genomes equitably sampled in space and time</h3>
+					<img class="stretch" data-src="images/sarscov2_adaptive_evolution_phylogeny.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/kistler-sarscov2-adaptive-evolution/">Kistler et al. 2021. bioRxiv.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Measure clade growth as a proxy for viral fitness</h3>
+					<img class="stretch" data-src="images/sarscov2_adaptive_evolution_phylogeny_logistic_growth.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/kistler-sarscov2-adaptive-evolution/">Kistler et al. 2021. bioRxiv.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Clades with more S1 nonsynonymous mutations grow faster</h3>
+					<img class="stretch" data-src="images/sarscov2_adaptive_evolution_mut_accumulation_s1.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/kistler-sarscov2-adaptive-evolution/">Kistler et al. 2021. bioRxiv.</a>
+					</div>
+				</section>
+
+				<!-- <section>
+					<h3>This correlation is absent in control regions</h3>
+					<img class="stretch" data-src="images/sarscov2_adaptive_evolution_mut_accumulation_control.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/kistler-sarscov2-adaptive-evolution/">Kistler et al. 2021. bioRxiv.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>This correlation is stronger in S1 than other genes</h3>
+					<img class="stretch" data-src="images/sarscov2_adaptive_evolution_mut_accumulation_genes.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/kistler-sarscov2-adaptive-evolution/">Kistler et al. 2021. bioRxiv.</a>
+					</div>
+				</section> -->
+
+				<section>
+					<h3>S1 is quickly evolving and highly correlated with clade growth</h3>
+					<img class="stretch" data-src="images/sarscov2_adaptive_evolution_mut_accumulation_all_genes.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/kistler-sarscov2-adaptive-evolution/">Kistler et al. 2021. bioRxiv.</a>
+					</div>
+				</section>
+
+				<section data-transition="slide-in none-out">
+					<h3>dN/dS through time further highlights adaptive evolution</h3>
+					<img class="stretch" data-src="images/sarscov2_adaptive_evolution_dnds.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/kistler-sarscov2-adaptive-evolution/">Kistler et al. 2021. bioRxiv.</a>
+					</div>
+				</section>
+
+				<section data-transition="none-in slide-out">
+					<h3>Rapid pace of adaptive evolution relative to H3N2 influenza</h3>
+					<img class="stretch" data-src="images/sarscov2_adaptive_evolution_dnds_h3n2.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/kistler-sarscov2-adaptive-evolution/">Kistler et al. 2021. bioRxiv.</a>
+					</div>
+				</section>
+
+				<section>
+					<h3>Huge opportunity to work directly from frequency trajectories</h3>
+					<img class="stretch" data-src="images/sarscov2_variant_rt_logistic_regression_2021_09_01.png">
+				</section>
+
+				<section>
+					<h3>Differences in intrinsic Rt across variants, but all trending downwards</h3>
+					<img class="stretch" data-src="images/sarscov2_variant_rt_trajectories_2021_09_23.png">
+					<div class="citation">
+						Figgins and Bedford. Unpublished.
+					</div>
+				</section>
+
+				<section>
+					<h3>Consistent differences in variant-specific transmission rate across states</h3>
+					<img class="stretch" data-src="images/sarscov2_variant_rt_growth_advantage_2021_09_23.png">
+					<div class="citation">
+						Figgins and Bedford. Unpublished.
+					</div>
+				</section>
+
+				<section data-background="#000000">
+					<h2 class="title">Future of genomic epidemiology</h2>
+				</section>
+
+				<section style="text-align: left;">
+					<h3>The COVID-19 pandemic has pushed the field perhaps ~5 years into the future</h3>
+					<div style="float: left; width: 80%">
+						<br>
+						<table style="line-height: 2.5em;">
+							<tr>
+								<td style="border: none;">2013-16 Ebola in West Africa</td>
+								<td style="border: none;">29k confirmed cases</td>
+								<td style="border: none;">1610 genomes</td>
+							</tr>
+							<tr>
+								<td style="border: none;">2015-17 Zika in the Americas</td>
+								<td style="border: none;">223k confirmed cases</td>
+								<td style="border: none;">942 genomes</td>
+							</tr>
+							<tr>
+								<td style="border: none;">2018-19 seasonal flu in US</td>
+								<td style="border: none;">290k confirmed cases</td>
+								<td style="border: none;">8864 genomes</td>
+							</tr>
+							<tr>
+								<td style="border: none;">2020-21 COVID-19 pandemic</td>
+								<td style="border: none;">245M confirmed cases</td>
+								<td style="border: none;">4.6M genomes</td>
+							</tr>
+						</table>
+					</div>
+					<div style="float: right; width: 14%">
+						<img src="images/ncov_data_quantity.png">
+					</div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="reveal-v4/dist/reveal.js"></script>
+		<script>
+			Reveal.initialize();
+			Reveal.configure({
+			  controls: false,
+				hash: true,
+				history: true,
+				center: true,
+				height: 720,
+				margin: 0.05,
+				minScale: 0.1,
+  			maxScale: 5.0,
+				width: 1280,
+				slideNumber: false
+			});
+		</script>
+
+	</body>
+</html>
