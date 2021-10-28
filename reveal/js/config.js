@@ -8,7 +8,7 @@ Reveal.initialize({
 	margin: 0.05,
 	minScale: 0.1,
 	maxScale: 5.0,
-	width: 960,
+	width: 1280,
 	height: 720,
 
 	theme: Reveal.getQueryHash().theme, // available themes are in /css/theme

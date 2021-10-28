@@ -16,7 +16,7 @@ body {
 
 .reveal {
   font-family: "Lato", sans-serif;
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 300;
   color: #333333; }
 
@@ -37,28 +37,29 @@ body {
    margin: 0 0 20px 0;
    color: #333;
    font-family: "Lato", sans-serif;
+   line-height: 1.2em;
    font-weight: 300;
    text-shadow: none;
    word-wrap: break-word; }
 
  .reveal h1 {
-   font-size: 3.33em; }
+   font-size: 3.3em; }
 
  .reveal h2 {
-   font-size: 2.11em; }
+   font-size: 2.22em; }
 
  .reveal h3 {
    font-size: 1.55em; }
 
  .reveal h4 {
-   font-size: 1em; }
+   font-size: 1.33em; }
 
  .reveal h1 {
    text-shadow: none; }
 
 .reveal p {
   margin: 20px 0;
-  line-height: 1.6em;
+  line-height: 1.5em;
 }
 
 .reveal sup {
@@ -86,6 +87,56 @@ body {
 .reveal .tiny {
 	font-size: 65%;
 }
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%; }
+
+.reveal strong,
+.reveal b {
+  font-weight: bold; }
+
+.reveal em {
+  font-style: italic; }
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em; }
+
+.reveal ol {
+  list-style-type: decimal; }
+
+.reveal ul {
+  list-style-type: disc; }
+
+.reveal ul ul {
+  list-style-type: square; }
+
+.reveal ul ul ul {
+  list-style-type: circle; }
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px; }
+
+.reveal li {
+  margin: 10px 0;
+}
+
+.reveal dt {
+  font-weight: bold; }
+
+.reveal dd {
+  margin-left: 40px; }
 
 .citation {
   position: absolute;
